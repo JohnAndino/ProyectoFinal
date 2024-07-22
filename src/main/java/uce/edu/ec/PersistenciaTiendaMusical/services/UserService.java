@@ -1,6 +1,5 @@
 package uce.edu.ec.PersistenciaTiendaMusical.services;
 
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import uce.edu.ec.PersistenciaTiendaMusical.models.entidades.User;
@@ -11,6 +10,7 @@ import java.util.Optional;
 
 @Service
 public class UserService {
+
     @Autowired
     private UserRepository userRepository;
 
@@ -24,6 +24,14 @@ public class UserService {
 
     public User createUser(User user) {
         return userRepository.save(user);
+    }
+
+    public Optional<User> updateUser(Long id, User user) {
+        if (userRepository.existsById(id)) {
+            user.setId(id);
+            return Optional.of(userRepository.save(user));
+        }
+        return Optional.empty();
     }
 
     public void deleteUser(Long id) {

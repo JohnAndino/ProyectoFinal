@@ -13,7 +13,7 @@ public class Invoice {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "order_id", nullable = false)
-    private Order order;
+    private Order orderId;
 
     @Column(nullable = false)
     private LocalDate date;
@@ -24,8 +24,8 @@ public class Invoice {
     public Invoice() {
     }
 
-    public Invoice(Order order, LocalDate date, BigDecimal total) {
-        this.order = order;
+    public Invoice(Order orderId, LocalDate date, BigDecimal total) {
+        this.orderId = orderId;
         this.date = date;
         this.total = total;
     }
@@ -38,12 +38,12 @@ public class Invoice {
         this.id = id;
     }
 
-    public Order getOrder() {
-        return order;
+    public Order getOrderId() {
+        return orderId;
     }
 
-    public void setOrder(Order order) {
-        this.order = order;
+    public void setOrderId(Order orderId) {
+        this.orderId = orderId;
     }
 
     public LocalDate getDate() {

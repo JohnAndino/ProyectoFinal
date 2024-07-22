@@ -18,15 +18,15 @@ public class ProductStage {
     private Stage stage;
 
     @Column(nullable = false)
-    private int order;
+    private int stageorder;
 
     public ProductStage() {
     }
 
-    public ProductStage(Product product, Stage stage, int order) {
+    public ProductStage(Product product, Stage stage, int stageorder) {
         this.product = product;
         this.stage = stage;
-        this.order = order;
+        this.stageorder = stageorder;
     }
 
     public long getId() {
@@ -53,12 +53,12 @@ public class ProductStage {
         this.stage = stage;
     }
 
-    public int getOrder() {
-        return order;
+    public int getStageorder() {
+        return stageorder;
     }
 
-    public void setOrder(int order) {
-        this.order = order;
+    public void setStageorder(int stageorder) {
+        this.stageorder = stageorder;
     }
 }
 

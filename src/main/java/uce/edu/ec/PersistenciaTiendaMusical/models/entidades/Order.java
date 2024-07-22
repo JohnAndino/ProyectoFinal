@@ -22,7 +22,7 @@ public class Order {
     @Column(nullable = false)
     private String status; // "Pending", "In Process", "Completed"
 
-    @OneToMany(mappedBy = "order", cascade = CascadeType.ALL, orphanRemoval = true)
+    @OneToMany(mappedBy = "orderId", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<OrderProduct> products = new ArrayList<>();
 
     public Order() {
@@ -76,11 +76,11 @@ public class Order {
 
     public void addProduct(OrderProduct product) {
         products.add(product);
-        product.setOrder(this);
+        product.setOrderId(this);
     }
 
     public void removeProduct(OrderProduct product) {
         products.remove(product);
-        product.setOrder(null);
+        product.setOrderId(null);
     }
 }
