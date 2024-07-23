@@ -19,12 +19,12 @@ public class Invoice {
     private LocalDate date;
 
     @Column(nullable = false)
-    private BigDecimal total;
+    private float total;
 
     public Invoice() {
     }
 
-    public Invoice(Order orderId, LocalDate date, BigDecimal total) {
+    public Invoice(Order orderId, LocalDate date, float total) {
         this.orderId = orderId;
         this.date = date;
         this.total = total;
@@ -54,11 +54,11 @@ public class Invoice {
         this.date = date;
     }
 
-    public BigDecimal getTotal() {
+    public float getTotal() {
         return total;
     }
 
-    public void setTotal(BigDecimal total) {
+    public void setTotal(float total) {
         this.total = total;
     }
 }

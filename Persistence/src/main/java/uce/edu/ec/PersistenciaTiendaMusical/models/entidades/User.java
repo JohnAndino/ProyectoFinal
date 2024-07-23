@@ -16,9 +16,11 @@ public class User {
 
     @Column(nullable = false)
     private String email;
-
     @Column(nullable = false)
     private String password;
+
+    @Column(nullable = false)
+    private String dni;
 
     @Column(nullable = false)
     private String role; // "CUSTOMER" or "ADMIN"
@@ -29,11 +31,20 @@ public class User {
     public User() {
     }
 
-    public User(String name, String email, String password, String role) {
+    public User(String name, String email, String password, String dni, String role) {
         this.name = name;
         this.email = email;
         this.password = password;
+        this.dni = dni;
         this.role = role;
+    }
+
+    public String getDni() {
+        return dni;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
     }
 
     public long getId() {

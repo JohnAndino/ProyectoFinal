@@ -26,12 +26,12 @@ public class PersistenciaTiendaMusicalApplication {
 	public CommandLineRunner demo(OrderService orderService, UserService userService, ProductService productService) {
 		return (args) -> {
 			// Crear un cliente
-			User customer = new User("Mateo", "jami@gmail.com", "jami2002", "ADMIN");
+			User customer = new User("Mateo", "jami@gmail.com", "jami2002", "1755191390","ADMIN");
 			userService.createUser(customer);
 
 			// Crear productos
-			Product product1 = new Product("Guitarra", "guitarra acustica", 100.0, "madera");
-			Product product2 = new Product("Flauta", "flauta pequeña", 10.0, "plastico");
+			Product product1 = new Product("Guitarra", "guitarra acustica", 100.0, "madera", "cafe");
+			Product product2 = new Product("Flauta", "flauta pequeña", 10.0, "plastico", "crema");
 			productService.createProduct(product1);
 			productService.createProduct(product2);
 

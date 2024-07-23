@@ -24,17 +24,29 @@ public class Product {
     @Column(nullable = false)
     private String material;
 
+    @Column(nullable = false)
+    private String color;
+
     @OneToMany(mappedBy = "product", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<ProductStage> stages = new ArrayList<>();
 
     public Product() {
     }
 
-    public Product(String name, String description, double price, String material) {
+    public Product(String name, String description, double price, String material, String color) {
         this.name = name;
         this.description = description;
         this.price = price;
         this.material = material;
+        this.color = color;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public long getId() {
