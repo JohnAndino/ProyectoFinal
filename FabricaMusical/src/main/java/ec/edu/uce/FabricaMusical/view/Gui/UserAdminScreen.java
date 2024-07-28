@@ -3,9 +3,9 @@ package ec.edu.uce.FabricaMusical.view.Gui;
 import ec.edu.uce.FabricaMusical.models.controllers.UserController;
 import ec.edu.uce.FabricaMusical.models.entities.User;
 import ec.edu.uce.FabricaMusical.models.services.UserService;
-import uce.edu.ec.PersistenciaTiendaMusical.controllers.UserController;
-import uce.edu.ec.PersistenciaTiendaMusical.models.entidades.User;
-import uce.edu.ec.PersistenciaTiendaMusical.services.UserService;
+import ec.edu.uce.FabricaMusical.models.controllers.UserController;
+import ec.edu.uce.FabricaMusical.models.entities.User;
+import ec.edu.uce.FabricaMusical.models.services.UserService;
 
 import java.awt.Dimension;
 import java.awt.Toolkit;
