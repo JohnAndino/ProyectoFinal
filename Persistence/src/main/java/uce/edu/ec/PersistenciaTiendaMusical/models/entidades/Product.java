@@ -15,8 +15,6 @@ public class Product {
     @Column(nullable = false)
     private String name;
 
-    @Column(nullable = false)
-    private String description;
 
     @Column(nullable = false)
     private double price;
@@ -33,9 +31,9 @@ public class Product {
     public Product() {
     }
 
-    public Product(String name, String description, double price, String material, String color) {
+    public Product(String name, double price, String material, String color) {
         this.name = name;
-        this.description = description;
+
         this.price = price;
         this.material = material;
         this.color = color;
@@ -65,13 +63,7 @@ public class Product {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
-    }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
 
     public double getPrice() {
         return price;

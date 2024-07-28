@@ -25,19 +25,29 @@ public class User {
     @Column(nullable = false)
     private String role; // "CUSTOMER" or "ADMIN"
 
+    @Column(nullable = false)
+    private String address; // "CUSTOMER" or "ADMIN"
+
+    @Column(nullable = false)
+    private String cellphone; // "CUSTOMER" or "ADMIN"
+
+
     @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Order> orders = new ArrayList<>();
 
     public User() {
     }
 
-    public User(String name, String email, String password, String dni, String role) {
+    public User(String dni,String name, String password,String cellphone,String email, String Address,String role ) {
         this.name = name;
         this.email = email;
         this.password = password;
         this.dni = dni;
         this.role = role;
+        this.address = Address;
+        this.cellphone = cellphone;
     }
+
 
     public String getDni() {
         return dni;
@@ -93,6 +103,22 @@ public class User {
 
     public void setOrders(List<Order> orders) {
         this.orders = orders;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getCellphone() {
+        return cellphone;
+    }
+
+    public void setCellphone(String cellphone) {
+        this.cellphone = cellphone;
     }
 
     public void addOrder(Order order) {

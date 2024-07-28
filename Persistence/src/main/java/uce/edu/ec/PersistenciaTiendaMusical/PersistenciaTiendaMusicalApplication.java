@@ -4,10 +4,8 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import uce.edu.ec.PersistenciaTiendaMusical.models.entidades.Order;
-import uce.edu.ec.PersistenciaTiendaMusical.models.entidades.OrderProduct;
-import uce.edu.ec.PersistenciaTiendaMusical.models.entidades.Product;
-import uce.edu.ec.PersistenciaTiendaMusical.models.entidades.User;
+import uce.edu.ec.PersistenciaTiendaMusical.models.entidades.*;
+import uce.edu.ec.PersistenciaTiendaMusical.services.InvoiceService;
 import uce.edu.ec.PersistenciaTiendaMusical.services.OrderService;
 import uce.edu.ec.PersistenciaTiendaMusical.services.ProductService;
 import uce.edu.ec.PersistenciaTiendaMusical.services.UserService;
@@ -23,15 +21,15 @@ public class PersistenciaTiendaMusicalApplication {
 	}
 
 	@Bean
-	public CommandLineRunner demo(OrderService orderService, UserService userService, ProductService productService) {
+	public CommandLineRunner demo(OrderService orderService, UserService userService, ProductService productService, InvoiceService invoiceService) {
 		return (args) -> {
 			// Crear un cliente
-			User customer = new User("Mateo", "jami@gmail.com", "jami2002", "1755191390","ADMIN");
+			User customer = new User("1755191390","Mateo",  "jami2002","0361245871","jami@gmail.com","quito" ,"ADMIN");
 			userService.createUser(customer);
 
 			// Crear productos
-			Product product1 = new Product("Guitarra", "guitarra acustica", 100.0, "madera", "cafe");
-			Product product2 = new Product("Flauta", "flauta pequeña", 10.0, "plastico", "crema");
+			Product product1 = new Product("Guitarra", 100.0, "madera", "cafe");
+			Product product2 = new Product("Flauta", 10.0, "plastico", "crema");
 			productService.createProduct(product1);
 			productService.createProduct(product2);
 
@@ -47,6 +45,8 @@ public class PersistenciaTiendaMusicalApplication {
 				order.addProduct(orderProduct);
 			}
 			orderService.createOrder(order);
+
+			//Invoice invoice = Invoice();
 		};
 	}
 }
