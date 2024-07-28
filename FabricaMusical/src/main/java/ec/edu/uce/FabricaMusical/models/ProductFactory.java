@@ -1,6 +1,7 @@
 package ec.edu.uce.FabricaMusical.models;
 
 import ec.edu.uce.FabricaMusical.controller.Container;
+import ec.edu.uce.FabricaMusical.models.enums.Steps;
 
 import java.io.IOException;
 import java.util.Map;

@@ -1,8 +1,8 @@
 package ec.edu.uce.FabricaMusical.controller;
 
-import ec.edu.uce.FabricaMusical.models.interfaces.NotificationService;
 import ec.edu.uce.FabricaMusical.models.Product;
-import ec.edu.uce.FabricaMusical.models.Steps;
+import ec.edu.uce.FabricaMusical.models.interfaces.Notify;
+import ec.edu.uce.FabricaMusical.models.enums.Steps;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,9 +12,9 @@ import java.util.TimerTask;
 
 public class Container {
     private List<Product> products;
-    private NotificationService notificationService;
+    private Notify notificationService;
 
-    public Container(NotificationService notificationService) {
+    public Container(Notify notificationService) {
         this.products = new ArrayList<>();
         this.notificationService = notificationService;
     }

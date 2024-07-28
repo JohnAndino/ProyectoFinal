@@ -3,6 +3,7 @@ package ec.edu.uce.FabricaMusical.models;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.reflect.TypeToken;
+import ec.edu.uce.FabricaMusical.models.enums.Steps;
 
 import java.io.FileReader;
 import java.io.IOException;

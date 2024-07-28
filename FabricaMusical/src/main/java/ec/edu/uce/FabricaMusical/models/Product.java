@@ -1,5 +1,7 @@
 package ec.edu.uce.FabricaMusical.models;
 
+import ec.edu.uce.FabricaMusical.models.enums.Steps;
+
 import java.util.LinkedHashMap;
 import java.util.Map;
 
