@@ -39,6 +39,15 @@ public class Product {
         this.color = color;
     }
 
+    public Product(long id, String name, double price, String material, String color, List<ProductStage> stages) {
+        this.id = id;
+        this.name = name;
+        this.price = price;
+        this.material = material;
+        this.color = color;
+        this.stages = stages;
+    }
+
     public String getColor() {
         return color;
     }

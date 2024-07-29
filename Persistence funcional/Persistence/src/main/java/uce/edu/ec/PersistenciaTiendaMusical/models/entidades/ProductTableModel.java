@@ -19,7 +19,7 @@ public class ProductTableModel extends AbstractTableModel {
     private ProductService productService; // Inject ProductService
 
     private List<Product> products;
-    private final String[] columnNames = { "Nombre", "Precio", "Material", "Color" };
+    private final String[] columnNames = {"Id", "Nombre", "Precio", "Material", "Color" };
 
     public ProductTableModel(ProductService productService) {
         this.productService = productService;
@@ -58,12 +58,14 @@ public class ProductTableModel extends AbstractTableModel {
         Product product = products.get(rowIndex);
         switch (columnIndex) {
             case 0:
-                return product.getName(); // Assuming Product has a getName() method
+                return product.getId();
             case 1:
-                return BigDecimal.valueOf(product.getPrice()).setScale(2, RoundingMode.HALF_UP); // Format price
+                return product.getName(); // Assuming Product has a getName() method
             case 2:
-                return product.getMaterial(); // Assuming Product has a getMaterial() method
+                return BigDecimal.valueOf(product.getPrice()).setScale(2, RoundingMode.HALF_UP); // Format price
             case 3:
+                return product.getMaterial(); // Assuming Product has a getMaterial() method
+            case 4:
                 return product.getColor(); // Assuming Product has a getColor() method
             default:
                 return null;

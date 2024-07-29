@@ -6,7 +6,9 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import uce.edu.ec.PersistenciaTiendaMusical.Gui.InvoiceAdmin;
 import uce.edu.ec.PersistenciaTiendaMusical.Gui.UserAdminS;
+import uce.edu.ec.PersistenciaTiendaMusical.Gui.UserScreen;
 import uce.edu.ec.PersistenciaTiendaMusical.services.InvoiceService;
+import uce.edu.ec.PersistenciaTiendaMusical.services.ProductService;
 import uce.edu.ec.PersistenciaTiendaMusical.services.UserService;
 
 import javax.swing.*;
@@ -18,6 +20,8 @@ public class PersistenciaTiendaMusicalApplication {
 	private UserService userService;
 	@Autowired
 private InvoiceService invoiceService;
+	@Autowired
+	private ProductService productService;
 	public static void main(String[] args) {
 		System.setProperty("java.awt.headless", "false");
 		SpringApplication.run(PersistenciaTiendaMusicalApplication.class, args);
@@ -28,7 +32,8 @@ private InvoiceService invoiceService;
 
 		// Lanzar la interfaz gráfica Swing en el Event Dispatch Thread
 		SwingUtilities.invokeLater(() -> {
-			InvoiceAdmin screen = new InvoiceAdmin(invoiceService);
+		//	InvoiceAdmin screen = new InvoiceAdmin(invoiceService);
+			UserScreen screen = new UserScreen(productService);
 			//UserAdminS screen = new UserAdminS(userService);
 			screen.setVisible(true);
 		});
